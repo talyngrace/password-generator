@@ -1,5 +1,5 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+// // Assignment Code
+// var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
@@ -10,9 +10,34 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+function generatePassword (randomLower, randomUpper, randomSymbol, randomNumber)
 
+// // Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);
+
+//dominate elements
+
+const resultEl = document.getElementById('result');
+const lengthEl = document.getElementById('length');
+const upperCaseEl = document.getElementById('uppercase');
+const lowerCaseEl = document.getElementById('lowercase');
+const numbersEl = document.getElementById('numbers');
+const symbolsEl = document.getElementById('symbols');
+const generateBtn = document.getElementById('generate');
+const clipboardEl = document.getElementById('clipboard');
+
+
+// Add event listener to generate button
+generateBtn.addEventListener('click', writePassword);
+
+//object of all functions
+
+const randomFunction = {
+  lower: randomLower,
+  upper: randomUpper,
+  number: randomNumber,
+  symbol: randomSymbol
+};
 
 //Get random lowercase letter function
 

@@ -1,67 +1,83 @@
+var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+var symboles = ["!", "#", "$", "%", "&", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "]", "^", "{", "|", "}", "~"]
+
 // // Assignment Code
-var generateBtn = document.querySelector("#generate");
+
+
 
 // Write password to the #password input
+function generatePassword() {
+  var passLength = parseInt(
+    prompt
+      ('whats the length of the pw')
+  );
+  if (passLength < 8) {
+    alert("the password must be at least 8 characters");
+    return;
+  }
+  if (passLength > 128) {
+    alert("The password must be less than 128 characters");
+    return;
+  }
+  var randomUpper = confirm(
+  ("Do you want to use uppercase letters?")
+  )
+  var randomLower = confirm(
+    ("Do you want to use lowercase letters?")
+  )
+  var randomNumber = confirm(
+    ("Do you want to use numbers?")
+  )
+  var randomSymbol = confirm(
+    ("Do you want to use symbols?")
+  )
+// if statement
+
+if (
+  randomUpper === false &&
+  randomLower === false &&
+ randomNumber ===  false &&
+ randomSymbol === false
+) {
+  alert('you must pick one character type');
+  return;
+}
+}
+
+// function createPassword() {
+//   var potentialPassword = []
+//   var userSelectedPass = 
+// }
+
+
+// referencing the button element
+var generateBtn = document.querySelector("#generate");
+
+// responsible for password input box
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
-// // Add event listener to generate button
- generateBtn.addEventListener("click", writePassword);
-
-
-//Get random lowercase letter function
-
-function randomLower(){
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
-}
-
-//random upper case letter function
-
-function randomUpper(){
-  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
-}
-
-//random number function
-
-function randomNumber() {
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48);
-}
-
-//random symbol
-
-function randomSymbol() {
-  const symbols = '!@#$%^&*(){}.';
-  return symbols[Math.floor(Math.random() * symbols.length)];
-}
-
-console.log(randomNumber());
-
-
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-
-var randomPassword = prompt("How long would you like your password to be? Between 8-128");
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-
-randomPassword >= 8 && randomPassword <= 128
+generateBtn.addEventListener("click", writePassword);
 
 
 
+//    if (randomLower 
 
-// WHEN prompted for character types to include in the password
-// THEN I choose lowercase, uppercase, numeric, and/or special characters
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
+//    randomNumber 
+//    randomSymbol 
+//    randomUpper)
+// }
+
+
+// var upperCase = Math.floor(Math.random() * options.upperCase);
+
+//button is clickable as of now. When clicking on generate password we get undefined. 
+//still need to impliment prompts which is why it is undefined.
+
+//prompts will decide what characters the password consists of, need to be stored in a variable.

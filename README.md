@@ -1,4 +1,4 @@
-# talyn-portfolio
+# password-generator
 
 ## Description
 This site is designed to ask the user a series of prompts to generate a random password using the user's preferences. 
